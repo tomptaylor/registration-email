@@ -18,6 +18,7 @@ module.exports =  function (context, cb) {
   length: 10,
   charset: 'alphabetic'
 });
+  console.log(password);
   context.body.active = 'true';
   context.body.password = password;
   const model = context.body;
