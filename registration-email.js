@@ -2,7 +2,7 @@
  * @param {secret} MAILGUN_API_KEY - Mailgun API KEY
  * { "email":"tomptaylor@gmail.com"}
  */
-var randomize = require('randomize');
+var randomstring = require("randomstring");
 var MongoClient = require('mongodb');
 var request = require('request');
 
@@ -14,7 +14,10 @@ module.exports =  function (context, cb) {
   var MONGO_URL = context.secrets.MONGO_URL;
   if (!MAILGUN_API_KEY) return cb(new Error('Mailgun configuration is missing'));
 
-  var password = randomize('Aa0!', 10);
+  var password = randomstring.generate({
+  length: 10,
+  charset: 'alphabetic'
+});
   context.body.active = 'true';
   context.body.password = password;
   const model = context.body;
