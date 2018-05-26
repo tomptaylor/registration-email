@@ -34,7 +34,7 @@ module.exports =  function (context, cb) {
   var text = 
   'Thanks for registring.  Here is the link.  Here is your temporary password: ' + password;
 
-  request.post('context.secrets.MAILGUN_DOMAIN')
+  request.post(context.secrets.MAILGUN_DOMAIN)
   .auth('api', MAILGUN_API_KEY)
   .form( { from: 'Your friendly <tomptaylor@gmail.com>',
             to: 'tomptaylor@gmail.com',
