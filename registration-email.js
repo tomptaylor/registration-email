@@ -36,8 +36,8 @@ module.exports =  function (context, cb) {
 
   request.post(context.secrets.MAILGUN_DOMAIN)
   .auth('api', MAILGUN_API_KEY)
-  .form( { from: 'Your friendly <tomptaylor@yahoo.com>',
-            to: 'tomptaylor@gmail.com',
+  .form( { from: 'Your friendly <tomptaylor@gmail.com>',
+            to: 'tomptaylor@yahoo.com',
             subject: 'webtask test',
             text: text
   }).on('error', function(err) {
