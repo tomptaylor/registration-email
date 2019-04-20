@@ -18,18 +18,18 @@ module.exports =  function (context, cb) {
   length: 10,
   charset: 'alphabetic'
 });
-  console.log(password);
-  context.body.active = 'true';
-  context.body.password = password;
-  const model = context.body;
-  MongoClient.connect(MONGO_URL, (err, result) => {
-  if (err) console.log('err');
-    let db = result.db('testtom');
-    var collection = db.collection('users');
-    db.collection('users').insertOne(model, (err, result) => {
-      if (err) { cb(err, err); } 
-    });
-  });
+  //console.log(password);
+  //context.body.active = 'true';
+  //context.body.password = password;
+  //const model = context.body;
+  //MongoClient.connect(MONGO_URL, (err, result) => {
+  //if (err) console.log('err');
+  //  let db = result.db('testtom');
+  //  var collection = db.collection('users');
+  //  db.collection('users').insertOne(model, (err, result) => {
+  //    if (err) { cb(err, err); } 
+  //  });
+  //});
 
   var text = 
   'Thanks for registring.  Here is the link.  Here is your temporary password: ' + password;
